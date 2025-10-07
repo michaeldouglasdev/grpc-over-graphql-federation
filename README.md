@@ -44,8 +44,8 @@ Each subgraph follows a consistent structure with:
 
 ## Getting Started
 
-1. Navigate to the router directory and start the federation router
-2. Start individual subgraph services
-3. The router will automatically discover and federate the subgraphs
+1. Navigate to the router directory and run `make start` to start the federation router
+2. Start individual subgraph services with `make start`
+3. Go to http://localhost:3002 to test
 
-This architecture allows for independent development and deployment of microservices while providing a unified GraphQL interface to clients.
+This architecture enables enterprise-scale microservices development with independent team ownership, deployment flexibility, and a unified GraphQL interface for client applications. It supports organizational scalability by allowing different teams to develop and maintain their own domain-specific services while maintaining API consistency across the organization.
