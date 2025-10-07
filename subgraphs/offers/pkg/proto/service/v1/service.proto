@@ -1,0 +1,63 @@
+syntax = "proto3";
+package service.v1;
+
+option go_package = "github.com/wundergraph/service/pkg/generated/service/v1";
+
+// Service definition for ServiceService
+service ServiceService {
+  // Lookup OfferSection entity by id
+  rpc LookupOfferSectionById(LookupOfferSectionByIdRequest) returns (LookupOfferSectionByIdResponse) {}
+  rpc QueryOfferSections(QueryOfferSectionsRequest) returns (QueryOfferSectionsResponse) {}
+}
+
+// Key message for OfferSection entity lookup
+message LookupOfferSectionByIdRequestKey {
+  // Key field for OfferSection entity lookup.
+  string id = 1;
+}
+
+// Request message for OfferSection entity lookup.
+message LookupOfferSectionByIdRequest {
+  /*
+   * List of keys to look up OfferSection entities.
+   * Order matters - each key maps to one entity in LookupOfferSectionByIdResponse.
+   */
+  repeated LookupOfferSectionByIdRequestKey keys = 1;
+}
+
+// Response message for OfferSection entity lookup.
+message LookupOfferSectionByIdResponse {
+  /*
+   * List of OfferSection entities in the same order as the keys in LookupOfferSectionByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated OfferSection result = 1;
+}
+
+// Request message for offerSections operation.
+message QueryOfferSectionsRequest {
+}
+// Response message for offerSections operation.
+message QueryOfferSectionsResponse {
+  repeated OfferSection offer_sections = 1;
+}
+
+message Product {
+  string id = 1;
+}
+
+message OfferSection {
+  string id = 1;
+  string title = 2;
+  repeated Product products = 3;
+}

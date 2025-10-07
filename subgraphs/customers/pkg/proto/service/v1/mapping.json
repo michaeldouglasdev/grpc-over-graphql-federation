@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "service": "ServiceService",
+  "operationMappings": [
+    {
+      "type": "OPERATION_TYPE_QUERY",
+      "original": "me",
+      "mapped": "QueryMe",
+      "request": "QueryMeRequest",
+      "response": "QueryMeResponse"
+    }
+  ],
+  "entityMappings": [
+    {
+      "typeName": "User",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupUserById",
+      "request": "LookupUserByIdRequest",
+      "response": "LookupUserByIdResponse"
+    },
+    {
+      "typeName": "Address",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupAddressById",
+      "request": "LookupAddressByIdRequest",
+      "response": "LookupAddressByIdResponse"
+    }
+  ],
+  "typeFieldMappings": [
+    {
+      "type": "Query",
+      "fieldMappings": [
+        {
+          "original": "me",
+          "mapped": "me",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "User",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "name",
+          "mapped": "name",
+          "argumentMappings": []
+        },
+        {
+          "original": "cpf",
+          "mapped": "cpf",
+          "argumentMappings": []
+        },
+        {
+          "original": "email",
+          "mapped": "email",
+          "argumentMappings": []
+        },
+        {
+          "original": "dateOfBirth",
+          "mapped": "date_of_birth",
+          "argumentMappings": []
+        },
+        {
+          "original": "avatar",
+          "mapped": "avatar",
+          "argumentMappings": []
+        },
+        {
+          "original": "address",
+          "mapped": "address",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "Address",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "name",
+          "mapped": "name",
+          "argumentMappings": []
+        },
+        {
+          "original": "country",
+          "mapped": "country",
+          "argumentMappings": []
+        },
+        {
+          "original": "state",
+          "mapped": "state",
+          "argumentMappings": []
+        },
+        {
+          "original": "city",
+          "mapped": "city",
+          "argumentMappings": []
+        },
+        {
+          "original": "district",
+          "mapped": "district",
+          "argumentMappings": []
+        },
+        {
+          "original": "street",
+          "mapped": "street",
+          "argumentMappings": []
+        },
+        {
+          "original": "number",
+          "mapped": "number",
+          "argumentMappings": []
+        },
+        {
+          "original": "complement",
+          "mapped": "complement",
+          "argumentMappings": []
+        }
+      ]
+    }
+  ],
+  "enumMappings": []
+}

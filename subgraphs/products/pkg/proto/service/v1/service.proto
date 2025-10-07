@@ -1,0 +1,107 @@
+syntax = "proto3";
+package service.v1;
+
+option go_package = "github.com/wundergraph/service/pkg/generated/service/v1";
+
+// Service definition for ServiceService
+service ServiceService {
+  // Lookup FeaturedProductSection entity by id
+  rpc LookupFeaturedProductSectionById(LookupFeaturedProductSectionByIdRequest) returns (LookupFeaturedProductSectionByIdResponse) {}
+  // Lookup Product entity by id
+  rpc LookupProductById(LookupProductByIdRequest) returns (LookupProductByIdResponse) {}
+  rpc QueryFeaturedProducts(QueryFeaturedProductsRequest) returns (QueryFeaturedProductsResponse) {}
+}
+
+// Key message for Product entity lookup
+message LookupProductByIdRequestKey {
+  // Key field for Product entity lookup.
+  string id = 1;
+}
+
+// Request message for Product entity lookup.
+message LookupProductByIdRequest {
+  /*
+   * List of keys to look up Product entities.
+   * Order matters - each key maps to one entity in LookupProductByIdResponse.
+   */
+  repeated LookupProductByIdRequestKey keys = 1;
+}
+
+// Response message for Product entity lookup.
+message LookupProductByIdResponse {
+  /*
+   * List of Product entities in the same order as the keys in LookupProductByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated Product result = 1;
+}
+
+// Key message for FeaturedProductSection entity lookup
+message LookupFeaturedProductSectionByIdRequestKey {
+  // Key field for FeaturedProductSection entity lookup.
+  string id = 1;
+}
+
+// Request message for FeaturedProductSection entity lookup.
+message LookupFeaturedProductSectionByIdRequest {
+  /*
+   * List of keys to look up FeaturedProductSection entities.
+   * Order matters - each key maps to one entity in LookupFeaturedProductSectionByIdResponse.
+   */
+  repeated LookupFeaturedProductSectionByIdRequestKey keys = 1;
+}
+
+// Response message for FeaturedProductSection entity lookup.
+message LookupFeaturedProductSectionByIdResponse {
+  /*
+   * List of FeaturedProductSection entities in the same order as the keys in LookupFeaturedProductSectionByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated FeaturedProductSection result = 1;
+}
+
+// Request message for featuredProducts operation.
+message QueryFeaturedProductsRequest {
+}
+// Response message for featuredProducts operation.
+message QueryFeaturedProductsResponse {
+  repeated FeaturedProductSection featured_products = 1;
+}
+
+message Product {
+  string id = 1;
+  string name = 2;
+  string brand = 3;
+  int32 quantity_in_stock = 4;
+  double price = 5;
+  repeated string gallery = 6;
+  string description = 7;
+  string category = 8;
+  bool available = 9;
+}
+
+message FeaturedProductSection {
+  string id = 1;
+  string title = 2;
+  repeated Product products = 3;
+}

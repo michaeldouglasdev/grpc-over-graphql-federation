@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "service": "ServiceService",
+  "operationMappings": [
+    {
+      "type": "OPERATION_TYPE_QUERY",
+      "original": "services",
+      "mapped": "QueryServices",
+      "request": "QueryServicesRequest",
+      "response": "QueryServicesResponse"
+    }
+  ],
+  "entityMappings": [
+    {
+      "typeName": "Service",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupServiceById",
+      "request": "LookupServiceByIdRequest",
+      "response": "LookupServiceByIdResponse"
+    }
+  ],
+  "typeFieldMappings": [
+    {
+      "type": "Query",
+      "fieldMappings": [
+        {
+          "original": "services",
+          "mapped": "services",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "Service",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "name",
+          "mapped": "name",
+          "argumentMappings": []
+        },
+        {
+          "original": "description",
+          "mapped": "description",
+          "argumentMappings": []
+        },
+        {
+          "original": "price",
+          "mapped": "price",
+          "argumentMappings": []
+        },
+        {
+          "original": "duration",
+          "mapped": "duration",
+          "argumentMappings": []
+        },
+        {
+          "original": "category",
+          "mapped": "category",
+          "argumentMappings": []
+        },
+        {
+          "original": "available",
+          "mapped": "available",
+          "argumentMappings": []
+        },
+        {
+          "original": "location",
+          "mapped": "location",
+          "argumentMappings": []
+        }
+      ]
+    }
+  ],
+  "enumMappings": []
+}

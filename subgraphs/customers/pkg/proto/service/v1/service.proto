@@ -1,0 +1,113 @@
+syntax = "proto3";
+package service.v1;
+
+option go_package = "github.com/wundergraph/service/pkg/generated/service/v1";
+
+import "google/protobuf/wrappers.proto";
+
+// Service definition for ServiceService
+service ServiceService {
+  // Lookup Address entity by id
+  rpc LookupAddressById(LookupAddressByIdRequest) returns (LookupAddressByIdResponse) {}
+  // Lookup User entity by id
+  rpc LookupUserById(LookupUserByIdRequest) returns (LookupUserByIdResponse) {}
+  rpc QueryMe(QueryMeRequest) returns (QueryMeResponse) {}
+}
+
+// Key message for User entity lookup
+message LookupUserByIdRequestKey {
+  // Key field for User entity lookup.
+  string id = 1;
+}
+
+// Request message for User entity lookup.
+message LookupUserByIdRequest {
+  /*
+   * List of keys to look up User entities.
+   * Order matters - each key maps to one entity in LookupUserByIdResponse.
+   */
+  repeated LookupUserByIdRequestKey keys = 1;
+}
+
+// Response message for User entity lookup.
+message LookupUserByIdResponse {
+  /*
+   * List of User entities in the same order as the keys in LookupUserByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated User result = 1;
+}
+
+// Key message for Address entity lookup
+message LookupAddressByIdRequestKey {
+  // Key field for Address entity lookup.
+  string id = 1;
+}
+
+// Request message for Address entity lookup.
+message LookupAddressByIdRequest {
+  /*
+   * List of keys to look up Address entities.
+   * Order matters - each key maps to one entity in LookupAddressByIdResponse.
+   */
+  repeated LookupAddressByIdRequestKey keys = 1;
+}
+
+// Response message for Address entity lookup.
+message LookupAddressByIdResponse {
+  /*
+   * List of Address entities in the same order as the keys in LookupAddressByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated Address result = 1;
+}
+
+// Request message for me operation.
+message QueryMeRequest {
+}
+// Response message for me operation.
+message QueryMeResponse {
+  User me = 1;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string cpf = 3;
+  string email = 4;
+  string date_of_birth = 5;
+  string avatar = 6;
+  Address address = 7;
+}
+
+message Address {
+  string id = 1;
+  string name = 2;
+  string country = 3;
+  string state = 4;
+  string city = 5;
+  string district = 6;
+  string street = 7;
+  string number = 8;
+  google.protobuf.StringValue complement = 9;
+}

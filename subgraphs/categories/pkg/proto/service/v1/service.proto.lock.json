@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "messages": {
+    "Query": {
+      "fields": {
+        "categories": 5
+      },
+      "reservedNumbers": [
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    "QueryHello": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloRequest": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloResponse": {
+      "fields": {
+        "hello": 1
+      }
+    },
+    "QueryHello2": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Request": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Response": {
+      "fields": {
+        "hello_2": 1
+      }
+    },
+    "QueryObjResponse": {
+      "fields": {
+        "obj": 1
+      }
+    },
+    "Object": {
+      "fields": {
+        "age": 2,
+        "name": 3
+      },
+      "reservedNumbers": [
+        1
+      ]
+    },
+    "LookupCategoryByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupCategoryByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupCategoryByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "QueryCategoriesRequest": {
+      "fields": {}
+    },
+    "QueryCategoriesResponse": {
+      "fields": {
+        "categories": 1
+      }
+    },
+    "Category": {
+      "fields": {
+        "id": 1,
+        "name": 2,
+        "description": 3,
+        "icon": 4,
+        "productCount": 5,
+        "serviceCount": 6
+      }
+    }
+  },
+  "enums": {}
+}

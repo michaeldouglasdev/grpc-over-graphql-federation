@@ -1,0 +1,25 @@
+type Query {
+  me: User!
+}
+
+type User @key(fields: "id") {
+  id: ID!
+  name: String!
+  cpf: String!
+  email: String!
+  dateOfBirth: String!
+  avatar: String!
+  address: Address!
+}
+
+type Address @key(fields: "id") {
+  id: ID!
+  name: String!
+  country: String!
+  state: String!
+  city: String!
+  district: String!
+  street: String!
+  number: String!
+  complement: String
+}

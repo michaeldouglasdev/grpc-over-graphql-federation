@@ -1,0 +1,13 @@
+type Query {
+  offerSections: [OfferSection!]!
+}
+
+type Product @key(fields: "id", resolvable: false) {
+  id: ID!
+}
+
+type OfferSection @key(fields: "id") {
+  id: ID!
+  title: String!
+  products: [Product!]!
+}

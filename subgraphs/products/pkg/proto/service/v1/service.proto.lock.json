@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "messages": {
+    "Query": {
+      "fields": {
+        "featuredProducts": 5
+      },
+      "reservedNumbers": [
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    "QueryHello": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloRequest": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloResponse": {
+      "fields": {
+        "hello": 1
+      }
+    },
+    "QueryHello2": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Request": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Response": {
+      "fields": {
+        "hello_2": 1
+      }
+    },
+    "QueryObjResponse": {
+      "fields": {
+        "obj": 1
+      }
+    },
+    "Object": {
+      "fields": {
+        "age": 2,
+        "name": 3
+      },
+      "reservedNumbers": [
+        1
+      ]
+    },
+    "LookupProductByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupProductByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupProductByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "LookupFeaturedProductSectionByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupFeaturedProductSectionByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupFeaturedProductSectionByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "QueryFeaturedProductsRequest": {
+      "fields": {}
+    },
+    "QueryFeaturedProductsResponse": {
+      "fields": {
+        "featured_products": 1
+      }
+    },
+    "Product": {
+      "fields": {
+        "id": 1,
+        "name": 2,
+        "brand": 3,
+        "quantityInStock": 4,
+        "price": 5,
+        "gallery": 6,
+        "description": 7,
+        "category": 8,
+        "available": 9
+      }
+    },
+    "FeaturedProductSection": {
+      "fields": {
+        "id": 1,
+        "title": 2,
+        "products": 3
+      }
+    }
+  },
+  "enums": {}
+}

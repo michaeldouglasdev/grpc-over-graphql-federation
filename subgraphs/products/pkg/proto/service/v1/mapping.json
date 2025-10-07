@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "service": "ServiceService",
+  "operationMappings": [
+    {
+      "type": "OPERATION_TYPE_QUERY",
+      "original": "featuredProducts",
+      "mapped": "QueryFeaturedProducts",
+      "request": "QueryFeaturedProductsRequest",
+      "response": "QueryFeaturedProductsResponse"
+    }
+  ],
+  "entityMappings": [
+    {
+      "typeName": "Product",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupProductById",
+      "request": "LookupProductByIdRequest",
+      "response": "LookupProductByIdResponse"
+    },
+    {
+      "typeName": "FeaturedProductSection",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupFeaturedProductSectionById",
+      "request": "LookupFeaturedProductSectionByIdRequest",
+      "response": "LookupFeaturedProductSectionByIdResponse"
+    }
+  ],
+  "typeFieldMappings": [
+    {
+      "type": "Query",
+      "fieldMappings": [
+        {
+          "original": "featuredProducts",
+          "mapped": "featured_products",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "Product",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "name",
+          "mapped": "name",
+          "argumentMappings": []
+        },
+        {
+          "original": "brand",
+          "mapped": "brand",
+          "argumentMappings": []
+        },
+        {
+          "original": "quantityInStock",
+          "mapped": "quantity_in_stock",
+          "argumentMappings": []
+        },
+        {
+          "original": "price",
+          "mapped": "price",
+          "argumentMappings": []
+        },
+        {
+          "original": "gallery",
+          "mapped": "gallery",
+          "argumentMappings": []
+        },
+        {
+          "original": "description",
+          "mapped": "description",
+          "argumentMappings": []
+        },
+        {
+          "original": "category",
+          "mapped": "category",
+          "argumentMappings": []
+        },
+        {
+          "original": "available",
+          "mapped": "available",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "FeaturedProductSection",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "title",
+          "mapped": "title",
+          "argumentMappings": []
+        },
+        {
+          "original": "products",
+          "mapped": "products",
+          "argumentMappings": []
+        }
+      ]
+    }
+  ],
+  "enumMappings": []
+}

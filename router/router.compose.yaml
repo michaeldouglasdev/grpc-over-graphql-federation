@@ -1,0 +1,32 @@
+version: 1
+subgraphs:
+  - name: customers
+    routing_url: dns:///localhost:4011
+    grpc:
+      schema_file: ../subgraphs/customers/pkg/graph/schema.graphql
+      proto_file: ../subgraphs/customers/pkg/proto/service/v1/service.proto
+      mapping_file: ../subgraphs/customers/pkg/proto/service/v1/mapping.json
+  - name: categories
+    routing_url: dns:///localhost:4012
+    grpc:
+      schema_file: ../subgraphs/categories/pkg/graph/schema.graphql
+      proto_file: ../subgraphs/categories/pkg/proto/service/v1/service.proto
+      mapping_file: ../subgraphs/categories/pkg/proto/service/v1/mapping.json
+  - name: services
+    routing_url: dns:///localhost:4013
+    grpc:
+      schema_file: ../subgraphs/services/pkg/graph/schema.graphql
+      proto_file: ../subgraphs/services/pkg/proto/service/v1/service.proto
+      mapping_file: ../subgraphs/services/pkg/proto/service/v1/mapping.json
+  - name: offers
+    routing_url: dns:///localhost:4014
+    grpc:
+      schema_file: ../subgraphs/offers/pkg/graph/schema.graphql
+      proto_file: ../subgraphs/offers/pkg/proto/service/v1/service.proto
+      mapping_file: ../subgraphs/offers/pkg/proto/service/v1/mapping.json
+  - name: products
+    routing_url: dns:///localhost:4015
+    grpc:
+      schema_file: ../subgraphs/products/pkg/graph/schema.graphql
+      proto_file: ../subgraphs/products/pkg/proto/service/v1/service.proto
+      mapping_file: ../subgraphs/products/pkg/proto/service/v1/mapping.json

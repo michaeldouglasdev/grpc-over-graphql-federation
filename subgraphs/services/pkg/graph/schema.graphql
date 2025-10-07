@@ -1,0 +1,14 @@
+type Query {
+  services: [Service!]!
+}
+
+type Service @key(fields: "id") {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+  duration: Int!
+  category: String!
+  available: Boolean!
+  location: String!
+}

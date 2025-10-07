@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "service": "ServiceService",
+  "operationMappings": [
+    {
+      "type": "OPERATION_TYPE_QUERY",
+      "original": "offerSections",
+      "mapped": "QueryOfferSections",
+      "request": "QueryOfferSectionsRequest",
+      "response": "QueryOfferSectionsResponse"
+    }
+  ],
+  "entityMappings": [
+    {
+      "typeName": "Product",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupProductById",
+      "request": "LookupProductByIdRequest",
+      "response": "LookupProductByIdResponse"
+    },
+    {
+      "typeName": "OfferSection",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupOfferSectionById",
+      "request": "LookupOfferSectionByIdRequest",
+      "response": "LookupOfferSectionByIdResponse"
+    }
+  ],
+  "typeFieldMappings": [
+    {
+      "type": "Query",
+      "fieldMappings": [
+        {
+          "original": "offerSections",
+          "mapped": "offer_sections",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "Product",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "OfferSection",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "title",
+          "mapped": "title",
+          "argumentMappings": []
+        },
+        {
+          "original": "products",
+          "mapped": "products",
+          "argumentMappings": []
+        }
+      ]
+    }
+  ],
+  "enumMappings": []
+}

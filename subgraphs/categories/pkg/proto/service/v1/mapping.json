@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "service": "ServiceService",
+  "operationMappings": [
+    {
+      "type": "OPERATION_TYPE_QUERY",
+      "original": "categories",
+      "mapped": "QueryCategories",
+      "request": "QueryCategoriesRequest",
+      "response": "QueryCategoriesResponse"
+    }
+  ],
+  "entityMappings": [
+    {
+      "typeName": "Category",
+      "kind": "entity",
+      "key": "id",
+      "rpc": "LookupCategoryById",
+      "request": "LookupCategoryByIdRequest",
+      "response": "LookupCategoryByIdResponse"
+    }
+  ],
+  "typeFieldMappings": [
+    {
+      "type": "Query",
+      "fieldMappings": [
+        {
+          "original": "categories",
+          "mapped": "categories",
+          "argumentMappings": []
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "fieldMappings": [
+        {
+          "original": "id",
+          "mapped": "id",
+          "argumentMappings": []
+        },
+        {
+          "original": "name",
+          "mapped": "name",
+          "argumentMappings": []
+        },
+        {
+          "original": "description",
+          "mapped": "description",
+          "argumentMappings": []
+        },
+        {
+          "original": "icon",
+          "mapped": "icon",
+          "argumentMappings": []
+        },
+        {
+          "original": "productCount",
+          "mapped": "product_count",
+          "argumentMappings": []
+        },
+        {
+          "original": "serviceCount",
+          "mapped": "service_count",
+          "argumentMappings": []
+        }
+      ]
+    }
+  ],
+  "enumMappings": []
+}

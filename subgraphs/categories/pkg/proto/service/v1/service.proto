@@ -1,0 +1,62 @@
+syntax = "proto3";
+package service.v1;
+
+option go_package = "github.com/wundergraph/service/pkg/generated/service/v1";
+
+// Service definition for ServiceService
+service ServiceService {
+  // Lookup Category entity by id
+  rpc LookupCategoryById(LookupCategoryByIdRequest) returns (LookupCategoryByIdResponse) {}
+  rpc QueryCategories(QueryCategoriesRequest) returns (QueryCategoriesResponse) {}
+}
+
+// Key message for Category entity lookup
+message LookupCategoryByIdRequestKey {
+  // Key field for Category entity lookup.
+  string id = 1;
+}
+
+// Request message for Category entity lookup.
+message LookupCategoryByIdRequest {
+  /*
+   * List of keys to look up Category entities.
+   * Order matters - each key maps to one entity in LookupCategoryByIdResponse.
+   */
+  repeated LookupCategoryByIdRequestKey keys = 1;
+}
+
+// Response message for Category entity lookup.
+message LookupCategoryByIdResponse {
+  /*
+   * List of Category entities in the same order as the keys in LookupCategoryByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated Category result = 1;
+}
+
+// Request message for categories operation.
+message QueryCategoriesRequest {
+}
+// Response message for categories operation.
+message QueryCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+message Category {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  int32 product_count = 5;
+  int32 service_count = 6;
+}

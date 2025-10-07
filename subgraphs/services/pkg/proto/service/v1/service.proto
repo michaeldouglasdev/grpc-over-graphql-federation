@@ -1,0 +1,64 @@
+syntax = "proto3";
+package service.v1;
+
+option go_package = "github.com/wundergraph/service/pkg/generated/service/v1";
+
+// Service definition for ServiceService
+service ServiceService {
+  // Lookup Service entity by id
+  rpc LookupServiceById(LookupServiceByIdRequest) returns (LookupServiceByIdResponse) {}
+  rpc QueryServices(QueryServicesRequest) returns (QueryServicesResponse) {}
+}
+
+// Key message for Service entity lookup
+message LookupServiceByIdRequestKey {
+  // Key field for Service entity lookup.
+  string id = 1;
+}
+
+// Request message for Service entity lookup.
+message LookupServiceByIdRequest {
+  /*
+   * List of keys to look up Service entities.
+   * Order matters - each key maps to one entity in LookupServiceByIdResponse.
+   */
+  repeated LookupServiceByIdRequestKey keys = 1;
+}
+
+// Response message for Service entity lookup.
+message LookupServiceByIdResponse {
+  /*
+   * List of Service entities in the same order as the keys in LookupServiceByIdRequest.
+   * Always return the same number of entities as keys. Use null for entities that cannot be found.
+   * 
+   * Example:
+   *   LookupUserByIdRequest:
+   *     keys:
+   *       - id: 1
+   *       - id: 2
+   *   LookupUserByIdResponse:
+   *     result:
+   *       - id: 1 # User with id 1 found
+   *       - null  # User with id 2 not found
+   */
+  repeated Service result = 1;
+}
+
+// Request message for services operation.
+message QueryServicesRequest {
+}
+// Response message for services operation.
+message QueryServicesResponse {
+  repeated Service services = 1;
+}
+
+message Service {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+  int32 duration = 5;
+  string category = 6;
+  bool available = 7;
+  string location = 8;
+}

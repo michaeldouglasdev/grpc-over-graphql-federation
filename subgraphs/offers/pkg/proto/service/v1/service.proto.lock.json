@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "messages": {
+    "Query": {
+      "fields": {
+        "offerSections": 5
+      },
+      "reservedNumbers": [
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    "QueryHello": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloRequest": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloResponse": {
+      "fields": {
+        "hello": 1
+      }
+    },
+    "QueryHello2": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Request": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Response": {
+      "fields": {
+        "hello_2": 1
+      }
+    },
+    "QueryObjResponse": {
+      "fields": {
+        "obj": 1
+      }
+    },
+    "Object": {
+      "fields": {
+        "age": 2,
+        "name": 3
+      },
+      "reservedNumbers": [
+        1
+      ]
+    },
+    "LookupOfferSectionByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupOfferSectionByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupOfferSectionByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "QueryOfferSectionsRequest": {
+      "fields": {}
+    },
+    "QueryOfferSectionsResponse": {
+      "fields": {
+        "offer_sections": 1
+      }
+    },
+    "Product": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "OfferSection": {
+      "fields": {
+        "id": 1,
+        "title": 2,
+        "products": 3
+      }
+    }
+  },
+  "enums": {}
+}

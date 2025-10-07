@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "messages": {
+    "Query": {
+      "fields": {
+        "me": 5
+      },
+      "reservedNumbers": [
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    "QueryHello": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloRequest": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHelloResponse": {
+      "fields": {
+        "hello": 1
+      }
+    },
+    "QueryHello2": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Request": {
+      "fields": {
+        "name": 1
+      }
+    },
+    "QueryHello2Response": {
+      "fields": {
+        "hello_2": 1
+      }
+    },
+    "QueryObjResponse": {
+      "fields": {
+        "obj": 1
+      }
+    },
+    "Object": {
+      "fields": {
+        "age": 2,
+        "name": 3
+      },
+      "reservedNumbers": [
+        1
+      ]
+    },
+    "LookupUserByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupUserByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupUserByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "LookupAddressByIdRequestKey": {
+      "fields": {
+        "id": 1
+      }
+    },
+    "LookupAddressByIdRequest": {
+      "fields": {
+        "keys": 1
+      }
+    },
+    "LookupAddressByIdResponse": {
+      "fields": {
+        "result": 1
+      }
+    },
+    "QueryMeRequest": {
+      "fields": {}
+    },
+    "QueryMeResponse": {
+      "fields": {
+        "me": 1
+      }
+    },
+    "User": {
+      "fields": {
+        "id": 1,
+        "name": 2,
+        "cpf": 3,
+        "email": 4,
+        "dateOfBirth": 5,
+        "avatar": 6,
+        "address": 7
+      }
+    },
+    "Address": {
+      "fields": {
+        "id": 1,
+        "name": 2,
+        "country": 3,
+        "state": 4,
+        "city": 5,
+        "district": 6,
+        "street": 7,
+        "number": 8,
+        "complement": 9
+      }
+    }
+  },
+  "enums": {}
+}
